@@ -16,6 +16,7 @@ find_package(marine_acoustic_msgs REQUIRED)
 
 # Include headers
 include_directories(include)
+include_directories(${CMAKE_SOURCE_DIR}/liboculus)
 
 # Build the driver library
 add_library(oculus_driver SHARED
