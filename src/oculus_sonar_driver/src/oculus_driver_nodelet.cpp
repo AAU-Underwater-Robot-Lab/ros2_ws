@@ -1,16 +1,14 @@
 // Copyright 2020 UW-APL
 // Authors: Aaron Marburg, Laura Lindzey
 
-#include "oculus_sonar_driver/oculus_driver_nodelet.h"
+#include "oculus_sonar_driver/include/oculus_driver_nodelet.h"
 
-#include <apl_msgs/RawData.h>
 #include <marine_acoustic_msgs/ProjectedSonarImage.h>
 
 #include <boost/asio.hpp>
 
 #include "liboculus/Constants.h"
 #include "liboculus/SonarConfiguration.h"
-#include "oculus_sonar_driver/publishing_data_rx.h"
 
 namespace oculus_sonar_driver {
 

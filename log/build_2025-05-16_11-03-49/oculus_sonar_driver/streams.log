@@ -1,4 +1,0 @@
-[0.020s] Invoking command in '/workspaces/oculus_sonar_driver/build/oculus_sonar_driver': /usr/bin/cmake /workspaces/oculus_sonar_driver -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/workspaces/oculus_sonar_driver/install/oculus_sonar_driver
-[0.057s] [0mCMake Error: The source directory "/workspaces/oculus_sonar_driver" does not appear to contain CMakeLists.txt.
-[0.057s] Specify --help for usage, or press the help button on the CMake GUI.[0m
-[0.059s] Invoked command in '/workspaces/oculus_sonar_driver/build/oculus_sonar_driver' returned '1': /usr/bin/cmake /workspaces/oculus_sonar_driver -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/workspaces/oculus_sonar_driver/install/oculus_sonar_driver
