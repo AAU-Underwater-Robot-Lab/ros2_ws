@@ -1,0 +1,2 @@
+Invoking command in '/workspaces/oculus_sonar_driver/build/oculus_sonar_driver': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /workspaces/oculus_sonar_driver -DCMAKE_INSTALL_PREFIX=/workspaces/oculus_sonar_driver/install/oculus_sonar_driver
+Invoked command in '/workspaces/oculus_sonar_driver/build/oculus_sonar_driver' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /workspaces/oculus_sonar_driver -DCMAKE_INSTALL_PREFIX=/workspaces/oculus_sonar_driver/install/oculus_sonar_driver

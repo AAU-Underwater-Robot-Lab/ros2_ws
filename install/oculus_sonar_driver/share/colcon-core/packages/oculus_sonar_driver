@@ -1,1 +1,1 @@
-apl_msgs:cv_bridge:g3log_ros:image_transport:liboculus:marine_acoustic_msgs:message_generation:nodelet:nodelet_topic_tools:roscpp:rospy:sensor_msgs:sonar_image_proc:std_msgs
+marine_acoustic_msgs:rclcpp:rclcpp_components:sensor_msgs:std_msgs

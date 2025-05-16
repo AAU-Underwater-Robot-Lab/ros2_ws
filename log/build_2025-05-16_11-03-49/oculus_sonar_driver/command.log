@@ -1,0 +1,2 @@
+Invoking command in '/workspaces/oculus_sonar_driver/build/oculus_sonar_driver': /usr/bin/cmake /workspaces/oculus_sonar_driver -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/workspaces/oculus_sonar_driver/install/oculus_sonar_driver
+Invoked command in '/workspaces/oculus_sonar_driver/build/oculus_sonar_driver' returned '1': /usr/bin/cmake /workspaces/oculus_sonar_driver -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/workspaces/oculus_sonar_driver/install/oculus_sonar_driver

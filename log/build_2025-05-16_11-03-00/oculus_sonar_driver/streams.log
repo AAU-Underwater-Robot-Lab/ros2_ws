@@ -1,0 +1,33 @@
+[0.062s] Invoking command in '/workspaces/oculus_sonar_driver/build/oculus_sonar_driver': /usr/bin/cmake /workspaces/oculus_sonar_driver -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/workspaces/oculus_sonar_driver/install/oculus_sonar_driver
+[0.457s] -- The C compiler identification is GNU 11.4.0
+[0.949s] -- The CXX compiler identification is GNU 11.4.0
+[0.992s] -- Detecting C compiler ABI info
+[1.447s] -- Detecting C compiler ABI info - done
+[1.554s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.554s] -- Detecting C compile features
+[1.566s] -- Detecting C compile features - done
+[1.596s] -- Detecting CXX compiler ABI info
+[2.075s] -- Detecting CXX compiler ABI info - done
+[2.150s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[2.150s] -- Detecting CXX compile features
+[2.155s] -- Detecting CXX compile features - done
+[2.184s] -- Configuring incomplete, errors occurred!
+[2.184s] See also "/workspaces/oculus_sonar_driver/build/oculus_sonar_driver/CMakeFiles/CMakeOutput.log".
+[2.187s] [31mCMake Error at CMakeLists.txt:10 (find_package):
+[2.187s]   By not providing "Findcatkin.cmake" in CMAKE_MODULE_PATH this project has
+[2.187s]   asked CMake to find a package configuration file provided by "catkin", but
+[2.187s]   CMake did not find one.
+[2.188s] 
+[2.188s]   Could not find a package configuration file provided by "catkin" with any
+[2.188s]   of the following names:
+[2.188s] 
+[2.190s]     catkinConfig.cmake
+[2.190s]     catkin-config.cmake
+[2.190s] 
+[2.193s]   Add the installation prefix of "catkin" to CMAKE_PREFIX_PATH or set
+[2.195s]   "catkin_DIR" to a directory containing one of the above files.  If "catkin"
+[2.195s]   provides a separate development package or SDK, be sure it has been
+[2.195s]   installed.
+[2.195s] 
+[2.195s] [0m
+[2.212s] Invoked command in '/workspaces/oculus_sonar_driver/build/oculus_sonar_driver' returned '1': /usr/bin/cmake /workspaces/oculus_sonar_driver -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/workspaces/oculus_sonar_driver/install/oculus_sonar_driver

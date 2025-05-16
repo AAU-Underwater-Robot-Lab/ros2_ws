@@ -1,0 +1,41 @@
+[0.014s] Invoking command in '/workspaces/oculus_sonar_driver/build/oculus_sonar_driver': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /workspaces/oculus_sonar_driver -DCMAKE_INSTALL_PREFIX=/workspaces/oculus_sonar_driver/install/oculus_sonar_driver
+[0.043s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.170s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.279s] -- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)
+[0.337s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.344s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.356s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.368s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.385s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.435s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.440s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.522s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.537s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.560s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.576s] -- Looking for pthread.h
+[0.683s] -- Looking for pthread.h - found
+[0.684s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.771s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.771s] -- Found Threads: TRUE  
+[0.829s] -- Found rclcpp_components: 16.0.12 (/opt/ros/humble/share/rclcpp_components/cmake)
+[0.858s] -- Found sensor_msgs: 4.8.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.895s] [31mCMake Error at CMakeLists.txt:15 (find_package):
+[0.895s]   By not providing "Findmarine_acoustic_msgs.cmake" in CMAKE_MODULE_PATH this
+[0.895s]   project has asked CMake to find a package configuration file provided by
+[0.896s]   "marine_acoustic_msgs", but CMake did not find one.
+[0.896s] 
+[0.896s]   Could not find a package configuration file provided by
+[0.896s]   "marine_acoustic_msgs" with any of the following names:
+[0.896s] 
+[0.896s]     marine_acoustic_msgsConfig.cmake
+[0.896s]     marine_acoustic_msgs-config.cmake
+[0.896s] 
+[0.896s]   Add the installation prefix of "marine_acoustic_msgs" to CMAKE_PREFIX_PATH
+[0.896s]   or set "marine_acoustic_msgs_DIR" to a directory containing one of the
+[0.897s]   above files.  If "marine_acoustic_msgs" provides a separate development
+[0.897s]   package or SDK, be sure it has been installed.
+[0.897s] 
+[0.897s] [0m
+[0.897s] -- Configuring incomplete, errors occurred!
+[0.897s] See also "/workspaces/oculus_sonar_driver/build/oculus_sonar_driver/CMakeFiles/CMakeOutput.log".
+[0.903s] Invoked command in '/workspaces/oculus_sonar_driver/build/oculus_sonar_driver' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /workspaces/oculus_sonar_driver -DCMAKE_INSTALL_PREFIX=/workspaces/oculus_sonar_driver/install/oculus_sonar_driver

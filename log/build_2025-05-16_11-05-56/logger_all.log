@@ -1,0 +1,78 @@
+[0.112s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.112s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=2, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x79bf5a54dc00>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x79bf5a6d2a70>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x79bf5a6d2a70>>, mixin_verb=('build',))
+[0.205s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.206s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/Gazebo.meta'
+[0.206s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/fastrtps.meta'
+[0.206s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.206s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.206s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.206s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.206s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.206s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/workspaces/oculus_sonar_driver'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.218s] DEBUG:colcon.colcon_core.package_identification:Package '.' with type 'ros.ament_cmake' and name 'oculus_sonar_driver'
+[0.218s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.219s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.219s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.219s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.219s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.247s] Level 5:colcon.colcon_core.verb:set package 'oculus_sonar_driver' build argument 'cmake_args' from command line to 'None'
+[0.247s] Level 5:colcon.colcon_core.verb:set package 'oculus_sonar_driver' build argument 'cmake_target' from command line to 'None'
+[0.247s] Level 5:colcon.colcon_core.verb:set package 'oculus_sonar_driver' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.247s] Level 5:colcon.colcon_core.verb:set package 'oculus_sonar_driver' build argument 'cmake_clean_cache' from command line to 'False'
+[0.247s] Level 5:colcon.colcon_core.verb:set package 'oculus_sonar_driver' build argument 'cmake_clean_first' from command line to 'False'
+[0.247s] Level 5:colcon.colcon_core.verb:set package 'oculus_sonar_driver' build argument 'cmake_force_configure' from command line to 'False'
+[0.247s] Level 5:colcon.colcon_core.verb:set package 'oculus_sonar_driver' build argument 'ament_cmake_args' from command line to 'None'
+[0.247s] Level 5:colcon.colcon_core.verb:set package 'oculus_sonar_driver' build argument 'catkin_cmake_args' from command line to 'None'
+[0.247s] Level 5:colcon.colcon_core.verb:set package 'oculus_sonar_driver' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.247s] DEBUG:colcon.colcon_core.verb:Building package 'oculus_sonar_driver' with the following arguments: {'ament_cmake_args': None, 'build_base': '/workspaces/oculus_sonar_driver/build/oculus_sonar_driver', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/workspaces/oculus_sonar_driver/install/oculus_sonar_driver', 'merge_install': False, 'path': '/workspaces/oculus_sonar_driver', 'symlink_install': False, 'test_result_base': None}
+[0.247s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.249s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.249s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/workspaces/oculus_sonar_driver' with build type 'ament_cmake'
+[0.249s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/workspaces/oculus_sonar_driver'
+[0.252s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.253s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.253s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.266s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspaces/oculus_sonar_driver/build/oculus_sonar_driver': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /workspaces/oculus_sonar_driver -DCMAKE_INSTALL_PREFIX=/workspaces/oculus_sonar_driver/install/oculus_sonar_driver
+[1.155s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspaces/oculus_sonar_driver/build/oculus_sonar_driver' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /workspaces/oculus_sonar_driver -DCMAKE_INSTALL_PREFIX=/workspaces/oculus_sonar_driver/install/oculus_sonar_driver
+[1.167s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(oculus_sonar_driver)
+[1.169s] Level 1:colcon.colcon_core.environment:checking '/workspaces/oculus_sonar_driver/install/oculus_sonar_driver' for CMake module files
+[1.169s] Level 1:colcon.colcon_core.environment:checking '/workspaces/oculus_sonar_driver/install/oculus_sonar_driver' for CMake config files
+[1.170s] Level 1:colcon.colcon_core.environment:checking '/workspaces/oculus_sonar_driver/install/oculus_sonar_driver/bin'
+[1.170s] Level 1:colcon.colcon_core.environment:checking '/workspaces/oculus_sonar_driver/install/oculus_sonar_driver/lib/pkgconfig/oculus_sonar_driver.pc'
+[1.172s] Level 1:colcon.colcon_core.environment:checking '/workspaces/oculus_sonar_driver/install/oculus_sonar_driver/lib/python3.10/site-packages'
+[1.172s] Level 1:colcon.colcon_core.environment:checking '/workspaces/oculus_sonar_driver/install/oculus_sonar_driver/bin'
+[1.173s] INFO:colcon.colcon_core.shell:Creating package script '/workspaces/oculus_sonar_driver/install/oculus_sonar_driver/share/oculus_sonar_driver/package.ps1'
+[1.173s] INFO:colcon.colcon_core.shell:Creating package descriptor '/workspaces/oculus_sonar_driver/install/oculus_sonar_driver/share/oculus_sonar_driver/package.dsv'
+[1.174s] INFO:colcon.colcon_core.shell:Creating package script '/workspaces/oculus_sonar_driver/install/oculus_sonar_driver/share/oculus_sonar_driver/package.sh'
+[1.175s] INFO:colcon.colcon_core.shell:Creating package script '/workspaces/oculus_sonar_driver/install/oculus_sonar_driver/share/oculus_sonar_driver/package.bash'
+[1.175s] INFO:colcon.colcon_core.shell:Creating package script '/workspaces/oculus_sonar_driver/install/oculus_sonar_driver/share/oculus_sonar_driver/package.zsh'
+[1.176s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/workspaces/oculus_sonar_driver/install/oculus_sonar_driver/share/colcon-core/packages/oculus_sonar_driver)
+[1.187s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.187s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.187s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '1'
+[1.187s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[1.194s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[1.194s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.194s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.194s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[1.194s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.NotSupported: Unable to autolaunch a dbus-daemon without a $DISPLAY for X11
+[1.194s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.195s] INFO:colcon.colcon_core.shell:Creating prefix script '/workspaces/oculus_sonar_driver/install/local_setup.ps1'
+[1.196s] INFO:colcon.colcon_core.shell:Creating prefix util module '/workspaces/oculus_sonar_driver/install/_local_setup_util_ps1.py'
+[1.198s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/workspaces/oculus_sonar_driver/install/setup.ps1'
+[1.199s] INFO:colcon.colcon_core.shell:Creating prefix script '/workspaces/oculus_sonar_driver/install/local_setup.sh'
+[1.200s] INFO:colcon.colcon_core.shell:Creating prefix util module '/workspaces/oculus_sonar_driver/install/_local_setup_util_sh.py'
+[1.200s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/workspaces/oculus_sonar_driver/install/setup.sh'
+[1.202s] INFO:colcon.colcon_core.shell:Creating prefix script '/workspaces/oculus_sonar_driver/install/local_setup.bash'
+[1.202s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/workspaces/oculus_sonar_driver/install/setup.bash'
+[1.203s] INFO:colcon.colcon_core.shell:Creating prefix script '/workspaces/oculus_sonar_driver/install/local_setup.zsh'
+[1.204s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/workspaces/oculus_sonar_driver/install/setup.zsh'
