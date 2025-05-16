@@ -15,7 +15,10 @@ find_package(std_msgs REQUIRED)
 find_package(marine_acoustic_msgs REQUIRED)
 
 # Include headers
-include_directories(include)
+include_directories(
+  include
+  ../liboculus/include
+)
 include_directories(${CMAKE_SOURCE_DIR}/liboculus)
 
 # Build the driver library
