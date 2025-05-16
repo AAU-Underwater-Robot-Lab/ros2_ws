@@ -1,28 +1,36 @@
 <?xml version="1.0"?>
-<package format="3">
+<package format="2">
   <name>oculus_sonar_driver</name>
-  <version>1.0.0</version>
-  <description>ROS2 node that uses liboculus to interface with a Blueprint Subsea Oculus imaging sonar.</description>
+  <version>0.0.1</version>
+  <description>ROS Package to interface with a Blueprint Subsea Oculus imaging sonar</description>
 
-  <maintainer email="you@domain.com">Your Name</maintainer>
-  <license>BSD-3-Clause</license>
+  <maintainer email="amarburg@uw.edu">A. Marburg</maintainer>
+  <license>BSD
+  </license>
 
-  <buildtool_depend>ament_cmake</buildtool_depend>
-  <build_depend>rclcpp</build_depend>
-  <build_depend>rcutils</build_depend>
-  <build_depend>std_msgs</build_depend>
-  <build_depend>marine_acoustic_msgs</build_depend>
-  <build_depend>apl_msgs</build_depend>
+  <!-- ROS build reqs -->
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>blueprint_oculus_msgs</build_depend>
+  <depend>message_generation</depend>
+  <depend>sensor_msgs</depend>
 
-  <exec_depend>rclcpp</exec_depend>
-  <exec_depend>std_msgs</exec_depend>
-  <exec_depend>marine_acoustic_msgs</exec_depend>
-  <exec_depend>apl_msgs</exec_depend>
+  <exec_depend>roscpp</exec_depend>
 
-  <test_depend>ament_lint_auto</test_depend>
-  <test_depend>ament_lint_common</test_depend>
+  <depend>apl_msgs</depend>
+  <depend>marine_acoustic_msgs</depend>
+  <depend>cv_bridge</depend>
+  <depend>sonar_image_proc</depend>
+  <depend>g3log_ros</depend>
+  <depend>image_transport</depend>
+  <depend>liboculus</depend>
+  <depend>nodelet</depend>
+  <depend>nodelet_topic_tools</depend>
+  <depend>rospy</depend>
+  <depend>std_msgs</depend>
 
   <export>
-    <build_type>ament_cmake</build_type>
+    <nodelet plugin="${prefix}/nodelet_plugins.xml" />
   </export>
+
 </package>

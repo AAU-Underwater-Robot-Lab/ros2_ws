@@ -1,0 +1,22 @@
+{
+  "name": "ROS2 Humble Dev",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-iot.vscode-ros",
+        "ms-vscode.cpptools",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder}/.ros,target=/root/.ros,type=volume"
+  ],
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "postCreateCommand": "source /opt/ros/humble/setup.bash && colcon build --symlink-install"
+}

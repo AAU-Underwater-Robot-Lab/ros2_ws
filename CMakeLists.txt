@@ -1,53 +1,90 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.0.2)
 project(oculus_sonar_driver)
 
-find_package(ament_cmake REQUIRED)
-find_package(rclcpp REQUIRED)
-find_package(std_msgs REQUIRED)
-find_package(marine_acoustic_msgs REQUIRED)
-find_package(apl_msgs REQUIRED)
-find_package(liboculus REQUIRED)
+## Compile as C++11, supported in ROS Kinetic and newer
+add_compile_options(-std=c++14)
 
-include_directories(
-  include
-)
+set(OpenCV_DIR /usr/share/OpenCV/)
 
-add_library(driver_node SHARED
-  src/driver_node.cpp
-)
-target_compile_features(driver_node PRIVATE c_std_11 cxx_std_17)
-target_link_libraries(driver_node
-  liboculus::oculus
-)
-target_include_directories(driver_node PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include>
-)
-ament_target_dependencies(driver_node
-  rclcpp
-  std_msgs
+# Standard dependencies
+find_package(catkin REQUIRED COMPONENTS
   marine_acoustic_msgs
+  cmake_modules
+  dynamic_reconfigure
+  g3log_ros
+  blueprint_oculus_msgs
+  liboculus
+  nodelet
+  nodelet_topic_tools
+  roscpp
   apl_msgs
 )
 
-rclcpp_components_register_node(driver_node
-  PLUGIN "oculus_sonar_driver::DriverNode"
-  EXECUTABLE driver_node_exe
+#add dynamic reconfigure api
+generate_dynamic_reconfigure_options(
+  cfg/OculusSonar.cfg
 )
 
-add_executable(driver_node_exe src/main.cpp)
-ament_target_dependencies(driver_node_exe rclcpp)
-target_link_libraries(driver_node_exe driver_node)
+## Compile as C++14, supported in ROS Kinetic and newer
+add_compile_options(-std=c++14)
 
-install(
-  DIRECTORY include/
-  DESTINATION include
-)
-install(
-  TARGETS driver_node driver_node_exe
-  ARCHIVE DESTINATION lib
-  LIBRARY DESTINATION lib
-  RUNTIME DESTINATION bin
+catkin_package(
+  INCLUDE_DIRS include
+  CATKIN_DEPENDS liboculus g3log_ros image_transport
 )
 
-ament_package()
+include_directories(
+  ${OpenCV_INCLUDE_DIRS}
+  include/
+  ${catkin_INCLUDE_DIRS}
+)
+
+
+add_library(oculus_driver_nodelet
+            src/oculus_driver_nodelet.cpp
+            src/reprocess_oculus_raw_data.cpp)
+target_link_libraries(oculus_driver_nodelet ${catkin_LIBRARIES})
+class_loader_hide_library_symbols(oculus_driver_nodelet)
+
+####
+add_executable(oculus_driver src/oculus_node.cpp)
+target_link_libraries(oculus_driver
+  ${catkin_LIBRARIES}
+)
+add_dependencies(oculus_driver
+  ${catkin_EXPORTED_TARGETS}
+  ${PROJECT_NAME}_gencfg
+)
+
+####
+add_executable(reprocess_oculus_raw_data src/reprocess_oculus_raw_data_node.cpp)
+target_link_libraries(reprocess_oculus_raw_data
+  ${catkin_LIBRARIES}
+)
+add_dependencies(reprocess_oculus_raw_data
+  ${catkin_EXPORTED_TARGETS}
+  ${PROJECT_NAME}_gencfg
+)
+
+####
+install(TARGETS oculus_driver
+                reprocess_oculus_raw_data
+DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION} )
+
+install(TARGETS oculus_driver_nodelet
+	      DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+        RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION})
+
+install( DIRECTORY launch/
+         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch )
+install( DIRECTORY rqt_config/
+         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/rqt_config )
+
+install( FILES nodelet_plugins.xml
+  		   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+
+if (CATKIN_ENABLE_TESTING)
+  catkin_add_gtest(oculus_sonar_test test/unit/main.cpp)
+  target_link_libraries(oculus_sonar_test ${catkin_LIBRARIES})
+endif()
