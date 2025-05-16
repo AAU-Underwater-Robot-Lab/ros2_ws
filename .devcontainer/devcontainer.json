@@ -12,9 +12,9 @@
       ]
     }
   },
-  "mounts": [
-    "source=${localWorkspaceFolder}/.ros,target=/root/.ros,type=volume"
-  ],
+  //"mounts": [
+  //  "source=${localWorkspaceFolder}/.ros,target=/root/.ros,type=volume"
+  //],
   "settings": {
     "terminal.integrated.shell.linux": "/bin/bash"
   },
