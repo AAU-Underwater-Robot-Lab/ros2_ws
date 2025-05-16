@@ -18,6 +18,7 @@ find_package(marine_acoustic_msgs REQUIRED)
 include_directories(
   include
   ../liboculus/include
+  ../liboculus/thirdparty
 )
 include_directories(${CMAKE_SOURCE_DIR}/liboculus)
 
@@ -27,8 +28,6 @@ add_library(oculus_driver SHARED
 )
 
 # Build additional executables
-add_executable(oculus_driver_nodelet src/oculus_driver_nodelet.cpp)
-add_executable(oculus_node src/oculus_node.cpp)
 add_executable(reprocess_oculus_raw_data src/reprocess_oculus_raw_data.cpp)
 add_executable(reprocess_oculus_raw_data_node src/reprocess_oculus_raw_data_node.cpp)
 
@@ -39,8 +38,6 @@ ament_target_dependencies(oculus_driver
   std_msgs
   marine_acoustic_msgs
 )
-ament_target_dependencies(oculus_driver_nodelet rclcpp rclcpp_components sensor_msgs std_msgs marine_acoustic_msgs)
-ament_target_dependencies(oculus_node rclcpp rclcpp_components sensor_msgs std_msgs marine_acoustic_msgs)
 ament_target_dependencies(reprocess_oculus_raw_data rclcpp rclcpp_components sensor_msgs std_msgs marine_acoustic_msgs)
 ament_target_dependencies(reprocess_oculus_raw_data_node rclcpp rclcpp_components sensor_msgs std_msgs marine_acoustic_msgs)
 
@@ -50,7 +47,7 @@ rclcpp_components_register_nodes(oculus_driver
 )
 
 # Install targets
-install(TARGETS oculus_driver oculus_driver_nodelet oculus_node reprocess_oculus_raw_data reprocess_oculus_raw_data_node
+install(TARGETS oculus_driver reprocess_oculus_raw_data reprocess_oculus_raw_data_node
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin
