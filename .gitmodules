@@ -5,3 +5,7 @@
 	path = src/g3log_ros
 	url = https://gitlab.com/apl-ocean-engineering/g3log_ros
 	branch = ros2
+[submodule "src/marine_msgs"]
+	path = src/marine_msgs
+	url = https://github.com/apl-ocean-engineering/marine_msgs
+	branch = ros2
