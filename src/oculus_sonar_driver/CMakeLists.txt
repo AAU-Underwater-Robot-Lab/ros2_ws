@@ -16,6 +16,7 @@ find_package(std_msgs REQUIRED)
 find_package(marine_acoustic_msgs REQUIRED)
 find_package(g3log_ros REQUIRED)
 find_package(liboculus REQUIRED)
+find_package(Boost REQUIRED COMPONENTS system)
 
 # Ensure CMake can find g3log_rosConfig.cmake
 list(APPEND CMAKE_PREFIX_PATH "${CMAKE_INSTALL_PREFIX}/g3log_ros")
@@ -36,7 +37,7 @@ add_executable(oculus_driver_node
 )
 
 target_link_libraries(oculus_driver_node
-  oculus
+  liboculus::oculus
 )
 
 ament_target_dependencies(oculus_driver_node

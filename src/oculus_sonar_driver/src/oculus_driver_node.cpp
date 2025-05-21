@@ -116,3 +116,16 @@ rcl_interfaces::msg::SetParametersResult OculusDriver::configCallback(const std:
 // template void oculus_sonar_driver::OculusDriver::pingCallback<YourPingType>(const YourPingType &);
 
 }  // namespace oculus_sonar_driver
+
+// Add main() for ROS2 node
+#include "rclcpp/rclcpp.hpp"
+#include "oculus_sonar_driver/oculus_driver_node.hpp"
+
+int main(int argc, char * argv[])
+{
+  rclcpp::init(argc, argv);
+  auto node = std::make_shared<oculus_sonar_driver::OculusDriver>();
+  rclcpp::spin(node);
+  rclcpp::shutdown();
+  return 0;
+}
