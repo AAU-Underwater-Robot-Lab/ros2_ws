@@ -9,3 +9,8 @@
 	path = src/marine_msgs
 	url = https://github.com/apl-ocean-engineering/marine_msgs
 	branch = ros2
+	branch = ros2
+[submodule "src/oculus_sonar_driver"]
+	path = src/oculus_sonar_driver
+	url = https://gitlab.com/Zerodamage/oculus_sonar_driver
+	branch = ros2
