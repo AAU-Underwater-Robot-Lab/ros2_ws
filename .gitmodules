@@ -1,0 +1,7 @@
+[submodule "src/liboculus"]
+	path = src/liboculus
+	url = https://github.com/AAU-Underwater-Robot-Lab/liboculus
+[submodule "src/g3log_ros"]
+	path = src/g3log_ros
+	url = https://gitlab.com/apl-ocean-engineering/g3log_ros
+	branch = ros2
