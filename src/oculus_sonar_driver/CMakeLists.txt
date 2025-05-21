@@ -6,48 +6,50 @@ if(NOT CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_STANDARD 17)
 endif()
 
+add_compile_options(-std=c++17)
+
 # Find ROS2 packages
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(rclcpp_components REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(marine_acoustic_msgs REQUIRED)
+find_package(g3log_ros REQUIRED)
+find_package(liboculus REQUIRED)
+
+# Ensure CMake can find g3log_rosConfig.cmake
+list(APPEND CMAKE_PREFIX_PATH "${CMAKE_INSTALL_PREFIX}/g3log_ros")
 
 # Include headers
 include_directories(
   include
   ../liboculus/include
   ../liboculus/thirdparty
+  ${CMAKE_INSTALL_PREFIX}/include/g3log
+  ${CMAKE_INSTALL_PREFIX}/include
 )
 include_directories(${CMAKE_SOURCE_DIR}/liboculus)
 
-# Build the driver library
-add_library(oculus_driver SHARED
-  src/oculus_driver.cpp
+# Build the ROS2 node executable only
+add_executable(oculus_driver_node
+  src/oculus_driver_node.cpp
 )
 
-# Build additional executables
-add_executable(reprocess_oculus_raw_data src/reprocess_oculus_raw_data.cpp)
-add_executable(reprocess_oculus_raw_data_node src/reprocess_oculus_raw_data_node.cpp)
+target_link_libraries(oculus_driver_node
+  oculus
+)
 
-ament_target_dependencies(oculus_driver
+ament_target_dependencies(oculus_driver_node
   rclcpp
-  rclcpp_components
   sensor_msgs
   std_msgs
   marine_acoustic_msgs
-)
-ament_target_dependencies(reprocess_oculus_raw_data rclcpp rclcpp_components sensor_msgs std_msgs marine_acoustic_msgs)
-ament_target_dependencies(reprocess_oculus_raw_data_node rclcpp rclcpp_components sensor_msgs std_msgs marine_acoustic_msgs)
-
-# Register the ROS2 component
-rclcpp_components_register_nodes(oculus_driver
-  PLUGIN "oculus_sonar_driver::OculusDriver"
+  g3log_ros
+  liboculus
 )
 
-# Install targets
-install(TARGETS oculus_driver reprocess_oculus_raw_data reprocess_oculus_raw_data_node
+# Install the node executable
+install(TARGETS oculus_driver_node
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin
@@ -61,7 +63,7 @@ install(DIRECTORY config/
   DESTINATION share/${PROJECT_NAME}/config
 )
 
-# Install headers
+# Install headers, but exclude ping_to_simple_ping_result_msg.h
 install(DIRECTORY include/
   DESTINATION include/
 )
