@@ -14,3 +14,6 @@
 	path = src/oculus_sonar_driver
 	url = https://gitlab.com/Zerodamage/oculus_sonar_driver
 	branch = ros2
+[submodule "src/cuvis.ros"]
+	path = src/cuvis.ros
+	url = https://github.com/cubert-hyperspectral/cuvis.ros
