@@ -2,3 +2,5 @@
 build/
 log/
 install/
+cuvis_sdk/cuviscommon_3.3.3-1.deb
+cuvis_sdk/libcuvis_3.3.3-1.deb
