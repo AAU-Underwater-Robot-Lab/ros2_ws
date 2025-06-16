@@ -17,3 +17,6 @@
 [submodule "src/cuvis.ros"]
 	path = src/cuvis.ros
 	url = https://github.com/cubert-hyperspectral/cuvis.ros
+[submodule "src/waterlinked_3d_sonar_driver"]
+	path = src/waterlinked_3d_sonar_driver
+	url = https://github.com/AAU-Underwater-Robot-Lab/waterlinked_3d_sonar_driver
